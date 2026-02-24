@@ -201,4 +201,16 @@ export default class RabbitManager implements RabbitManagerContract {
   public async closeConnection() {
     await this.rabbitConnection.closeConnection()
   }
+
+  /**
+   * retry connection
+   */
+  public async reconnect() {
+    await this.rabbitConnection.reconnect()
+    const connection = await this.getConnection()
+    this.$channelPromise =
+          connection.createChannel() as unknown as Promise<Channel>
+    this.$channel = await this.$channelPromise
+    this.hasChannel = true
+  }
 }

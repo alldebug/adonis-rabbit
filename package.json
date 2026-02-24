@@ -1,7 +1,7 @@
 {
-  "name": "adonis-rabbit",
+  "name": "@alldebug/adonis-rabbit",
   "description": "AdonisJS RabbitMQ provider",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "author": "Jota Júnior <jjunior@protonmail.ch>",
   "types": "build/adonis-typings/index.d.ts",
   "main": "build/providers/RabbitProvider.js",
@@ -17,6 +17,7 @@
   "scripts": {
     "build": "npm run copyfiles && tsc",
     "copyfiles": "copyfiles \"templates/**/*.txt\" build",
+    "publish": "npm publish --access public",
     "lint": "eslint . --ext=.ts --fix"
   },
   "devDependencies": {
@@ -32,8 +33,8 @@
   },
   "dependencies": {
     "@types/amqplib": "^0.5.14",
-    "amqplib": "^0.6.0",
-    "fast-safe-stringify": "^2.0.7"
+    "amqplib": "^0.10.3",
+    "fast-safe-stringify": "^2.1.1"
   },
   "adonisjs": {
     "templates": {
@@ -49,13 +50,16 @@
       "RABBITMQ_PORT": "",
       "RABIITMQ_PROTOCOL": "ampq://"
     },
-    "types": "adonis-rabbit",
+    "types": "@alldebug/adonis-rabbit",
     "providers": [
-      "adonis-rabbit"
+      "@alldebug/adonis-rabbit"
     ]
   },
   "np": {
     "message": "Releases v%s"
   },
-  "repository": "https://github.com/jotaajunior/adonis-rabbit.git"
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/alldebug/adonis-rabbit.git"
 }

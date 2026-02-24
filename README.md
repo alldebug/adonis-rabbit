@@ -1,5 +1,7 @@
 # adonis-rabbit
 
+> RabbitMQ provider Fork from [adonis-rabbit](https://www.npmjs.com/package/adonis-rabbit)
+
 `adonis-rabbit` is a RabbitMQ provider for [Adonis](https://github.com/adonisjs/core).
 
 ## Getting Started
@@ -7,13 +9,13 @@
 Instal `adonis-rabbit`:
 
 ```
-yarn add adonis-rabbit
+yarn add @alldebug/adonis-rabbit
 ```
 
 Then:
 
 ```
-node ace invoke adonis-rabbit
+node ace invoke @alldebug/adonis-rabbit
 ```
 
 This will create `config/rabbit.ts` and add the following fields to your `.env`:

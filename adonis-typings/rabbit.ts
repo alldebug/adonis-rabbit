@@ -119,6 +119,11 @@ declare module '@ioc:Adonis/Addons/Rabbit' {
      * Closes the connection
      */
     closeConnection(): Promise<void>
+
+    /**
+     * retry connection
+     */
+    reconnect(): Promise<void>
   }
   export interface MessageContract<T extends object = any> {
     /**

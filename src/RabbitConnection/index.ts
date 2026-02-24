@@ -131,4 +131,15 @@ export default class RabbitConnection {
       this.hasConnection = false
     }
   }
+
+  /**
+   * retry connection
+   */
+  public async reconnect() {
+    await this.closeConnection()
+    this.$connectionPromise = connect(
+      this.url
+    ) as unknown as Promise<Connection>
+    this.$connection = await this.$connectionPromise
+  }
 }
